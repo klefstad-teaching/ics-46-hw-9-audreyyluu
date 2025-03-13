@@ -1,3 +1,5 @@
+#include <ladder.h>
+
 void error(string word1, string word2, string msg) {
     cerr << "Error in finding path from " << word1 << " to " << word2 << ": " << msg << endl;
 }
