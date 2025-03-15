@@ -42,7 +42,7 @@ bool is_adjacent(const string& word1, const string& word2) {
 }
 
 vector<string> generate_word_ladder(const string& begin_word, const string& end_word, const set<string>& word_list) {
-    if (!word_list.contains(end_word)) {
+    if (word_list.find(end_word) == word_list.end()) {
         error(begin_word, end_word, end_word + " is not in the dictionary");
         return {};
     } else if (begin_word == end_word) {
@@ -62,7 +62,7 @@ vector<string> generate_word_ladder(const string& begin_word, const string& end_
         string last_word = ladder[ladder.size() - 1];
 
         for (string word : word_list) {
-            if (!visited.contains(word) && is_adjacent(last_word, word)) {
+            if (visited.find(word) == visited.end() && is_adjacent(last_word, word)) {
                 visited.insert(word);
                 vector<string> new_ladder = ladder;
                 new_ladder.push_back(word);
