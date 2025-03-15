@@ -11,13 +11,13 @@ bool edit_distance_within(const string& str1, const string& str2, int d) {
 
     if (len1 == len2) {
         for (int i=0; i<len1 && diff<=1; ++i) {
-            if (str1[i] != str2[i])
+            if (tolower(str1[i]) != tolower(str2[i]))
                 ++diff;
         }
     } else if (len1 - len2 == 1) {
         int i = 0, j = 0;
         while (j<len2 && diff<=1) {
-            if (str1[i] != str2[j])
+            if (tolower(str1[i]) != tolower(str2[j]))
                 ++diff;
             else
                 ++j;
@@ -26,7 +26,7 @@ bool edit_distance_within(const string& str1, const string& str2, int d) {
     } else if (len2 - len1 == 1) {
         int i = 0, j = 0;
         while (i<len1 && diff<=1) {
-            if (str1[i] != str2[j])
+            if (tolower(str1[i]) != tolower(str2[j]))
                 ++diff;
             else
                 ++i;
@@ -60,7 +60,7 @@ vector<string> generate_word_ladder(const string& begin_word, const string& end_
         string last_word = ladder[ladder.size() - 1];
 
         for (string word : word_list) {
-            if (is_adjacent(last_word, word) && !visited.contains(word)) {
+            if (!visited.contains(word) && is_adjacent(last_word, word)) {
                 visited.insert(word);
                 vector<string> new_ladder = ladder;
                 new_ladder.push_back(word);
