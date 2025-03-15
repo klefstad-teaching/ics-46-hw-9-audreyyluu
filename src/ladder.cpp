@@ -8,6 +8,12 @@ void error(string word1, string word2, string msg) {
 // bool is_adjacent(const string& word1, const string& word2);
 
 vector<string> generate_word_ladder(const string& begin_word, const string& end_word, const set<string>& word_list) {
+    if (!word_list.contains(end_word)) {
+        error(begin_word, end_word, end_word + " is not in the dictionary");
+        return {};
+    } else if (begin_word == end_word)
+        return {begin_word};
+
     queue<stack<string, vector<string>>> ladder_queue;
     stack<string, vector<string>> start = {begin_word};
     ladder_queue.push(start);
