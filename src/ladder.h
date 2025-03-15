@@ -17,4 +17,4 @@ vector<string> generate_word_ladder(const string& begin_word, const string& end_
 void load_words(set<string> & word_list, const string& file_name);
 void print_word_ladder(const vector<string>& ladder);
 void verify_word_ladder();
-void run_test(string begin_word, string end_word, set<string> word_list, int expected_size);
+void run_test(string begin_word, string end_word, setA<string> word_list, int expected_size);
