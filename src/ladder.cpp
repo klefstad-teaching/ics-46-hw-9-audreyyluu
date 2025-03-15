@@ -14,7 +14,11 @@ void load_words(set<string> & word_list, const string& file_name) {
         word_list.insert(word);
 }
 
-// void print_word_ladder(const vector<string>& ladder);
+void print_word_ladder(const vector<string>& ladder) {
+    for (string word : ladder)
+        cout << word << " ";
+    cout << endl;
+}
 
 #define my_assert(e) {cout << #e << ((e) ? " passed": " failed") << endl;}
 void verify_word_ladder() {
