@@ -37,7 +37,7 @@ vector<int> extract_shortest_path(const vector<int>& /*distances*/, const vector
     int numVertices = previous.size();
     vector<int> path(numVertices, UNDEFINED);
     int vertex = destination;
-    while (int i=numVertices-1; previous[vertex] != UNDEFINED && i>=0; --i) {
+    for (int i=numVertices-1; previous[vertex] != UNDEFINED && i>=0; --i) {
         path[i] = vertex;
         vertex = previous[vertex];
     }
