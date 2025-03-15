@@ -5,7 +5,10 @@ void error(string word1, string word2, string msg) {
 }
 
 // bool edit_distance_within(const std::string& str1, const std::string& str2, int d);
-// bool is_adjacent(const string& word1, const string& word2);
+
+bool is_adjacent(const string& word1, const string& word2) {
+    return edit_distance_within(word1, word2, 1);
+}
 
 vector<string> generate_word_ladder(const string& begin_word, const string& end_word, const set<string>& word_list) {
     if (!word_list.contains(end_word)) {
