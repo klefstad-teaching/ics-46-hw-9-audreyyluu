@@ -8,6 +8,6 @@ int main() {
 
     int dest = 2;
     int distance = distances[dest];
-    vector<int> path = extract_shortest_path(previous, dest);
+    vector<int> path = extract_shortest_path(distances, previous, dest);
     print_path(path, distance);  // 0 3 1 2
 }
