@@ -34,11 +34,10 @@ int extractVertexWithMinWeight(priority_queue<pair<int, int>, vector<pair<int, i
 }
 
 vector<int> extract_shortest_path(const vector<int>& /*distances*/, const vector<int>& previous, int destination) {
-    int numVertices = previous.size();
-    vector<int> path(numVertices, UNDEFINED);
+    vector<int> path;
     int vertex = destination;
-    for (int i=numVertices-1; vertex != UNDEFINED && i>=0; --i) {
-        path[i] = vertex;
+    while (vertex != UNDEFINED) {
+        path.insert(path.begin(), vertex);
         vertex = previous[vertex];
     }
     return path;
