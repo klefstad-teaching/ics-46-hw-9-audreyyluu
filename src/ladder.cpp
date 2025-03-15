@@ -34,7 +34,7 @@ bool edit_distance_within(const string& str1, const string& str2, int d) {
         }
     } else return false;
 
-    return diff == 1;
+    return diff <= 1;
 }
 
 bool is_adjacent(const string& word1, const string& word2) {
