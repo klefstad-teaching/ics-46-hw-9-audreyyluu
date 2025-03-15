@@ -8,6 +8,7 @@
 using namespace std;
 
 constexpr int INF = numeric_limits<int>::max();
+constexpr int UNDEFINED = -1;
 
 struct Edge {
     int src=0;
@@ -49,4 +50,5 @@ inline void file_to_graph(const string& filename, Graph& G) {
 
 vector<int> dijkstra_shortest_path(const Graph& G, int source, vector<int>& previous);
 vector<int> extract_shortest_path(const vector<int>& /*distances*/, const vector<int>& previous, int destination);
+int extractVertexWithMinWeight(priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>>& minHeap);
 void print_path(const vector<int>& v, int total);
