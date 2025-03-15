@@ -15,3 +15,11 @@ TEST(DijkstrasTest, SmallGraph) {
   vector<int> expected = {0, 3, 1, 2};
   EXPECT_EQ(path, expected) << "Error: path from vertex 0 to vertex 2 is incorrect";
 }
+
+TEST(LadderTest, AppleAppl) {
+  EXPECT_TRUE(is_adjacent("apple", "appl")) << "Error: apple and appl should be adjacent";
+}
+
+TEST(LadderTest, BearBears) {
+  EXPECT_TRUE(is_adjacent("bear", "bears")) << "Error: bear and bears should be adjacent";
+}
